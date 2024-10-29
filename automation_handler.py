@@ -7,7 +7,7 @@ from influxdb_handler import InfluxDBHandler
 from config import VENTILATION_URL, REFRESH_TIME
 
 is_Auto = True
-
+is_Open = True
 
 class AutomationHandler:
 
@@ -15,8 +15,8 @@ class AutomationHandler:
         self.influx_handler = InfluxDBHandler()
 
     async def check_air_periodically(self):
-        is_Open = True
 
+        global is_Open
         while True:
             if is_Auto:
                 air_quality = self.influx_handler.check_air()

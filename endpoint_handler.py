@@ -22,6 +22,10 @@ async def send_endpoint_request(chat_id, ip_address, endpoint, bot, context: Con
     url = f"http://{ip_address}{endpoint}"
 
     if (endpoint == "/open" or endpoint == "/close") and automation_handler.is_Auto:
+        if endpoint == "/open":
+            automation_handler.is_Open = True
+        elif endpoint == "/close":
+            automation_handler.is_Open = False
         automation_handler.is_Auto = False
         await bot.send_message(chat_id, "🔴 Ventilation mode has been changed to MANUAL", context)
     try:
