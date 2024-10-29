@@ -61,18 +61,18 @@ class InfluxDBHandler:
                 # Add Max Value details to the message
                 if max_table:
                     for max_row in max_table.records:
-                        message += f"Max Value: {max_row.get_value()} {max_row.get_field()}\n"
+                        message += f"⬆️ Max Value: {max_row.get_value()} {max_row.get_field()}\n"
 
                 if median_table:
                     for median_row in median_table.records:
                         median_value = median_row.get_value()
                         median_value = str(round(median_value, 2))
-                        message += f"Average Value: {median_value} {median_row.get_field()}\n"
+                        message += f"➡️ Average Value: {median_value} {median_row.get_field()}\n"
 
                 # Add Min Value details to the message
                 if min_table:
                     for min_row in min_table.records:
-                        message += f"Min Value: {min_row.get_value()} {min_row.get_field()}\n"
+                        message += f"⬇️ Min Value: {min_row.get_value()} {min_row.get_field()}\n"
 
                 # Add empty lines to separate each block
                 message += "\n\n"
