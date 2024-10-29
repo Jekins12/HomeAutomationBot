@@ -15,7 +15,7 @@ First, clone this repository to your Raspberry Pi
 
 ### 2. Configuration
 
-Make sure to change config_template.py to config.py
+Make sure to change config_template.py to config.py and edit it
 
 ### 3. Build the Docker Image
 
